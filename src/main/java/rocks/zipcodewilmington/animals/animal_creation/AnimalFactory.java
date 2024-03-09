@@ -12,13 +12,13 @@ import java.util.Date;
  * This class is responsible for creating animals and automatically assigning them an id
  */
 public class AnimalFactory {
-    public static Dog createDog(String name, Date birthDate) {
+    public static Dog createDog(String name, Date birthDate, Integer id) {
         Integer newId = DogHouse.getNumberOfDogs();
-        return new Dog(name, birthDate);
+        return new Dog(name, birthDate, id);
     }
 
-    public static Cat createCat(String name, Date birthDate) {
+    public static Cat createCat(String name, Date birthDate, Integer id) {
         Integer newId = CatHouse.getNumberOfCats();
-        return new Cat(name, birthDate, newId);
+        return new Cat(name, birthDate, id);
     }
 }

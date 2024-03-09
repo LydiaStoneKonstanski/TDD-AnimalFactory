@@ -22,7 +22,8 @@ public class DogHouseTest {
         // Given (some
         String name = "Milo";
         Date birthDate = new Date();
-        Dog animal = AnimalFactory.createDog(name, birthDate);
+        Integer id = 7835;
+        Dog animal = AnimalFactory.createDog(name, birthDate, id);
         DogHouse.clear();
 
         // When

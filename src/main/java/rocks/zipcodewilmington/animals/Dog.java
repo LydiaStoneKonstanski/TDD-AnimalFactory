@@ -9,10 +9,9 @@ public class Dog extends Mammal {
     private String name;
     private Date birthDate;
     private Integer id;
-    public Dog() {
+
+    public Dog(String name, Date birthDate, Integer id) {
         super(name, birthDate, id);
-        this.name = name;
-        this.birthDate = birthDate;
     }
 
     public String speak() {
