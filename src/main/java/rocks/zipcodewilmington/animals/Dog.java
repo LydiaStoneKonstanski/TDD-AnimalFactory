@@ -6,8 +6,13 @@ import java.util.Date;
  * @author leon on 4/19/18.
  */
 public class Dog extends Mammal {
-    public Dog(String name, Date birthDate, Integer id) {
+    private String name;
+    private Date birthDate;
+    private Integer id;
+    public Dog() {
         super(name, birthDate, id);
+        this.name = name;
+        this.birthDate = birthDate;
     }
 
     public String speak() {

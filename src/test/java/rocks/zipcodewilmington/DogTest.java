@@ -18,7 +18,7 @@ public class DogTest {
     @Test
     public void setNameTest() {
         // Given (a name exists and a dog exists)
-        Dog dog = new Dog(null, null, null);
+        Dog dog = new Dog(null, null);
         String givenName = "Milo";
 
         // When (a dog's name is set to the given name)
