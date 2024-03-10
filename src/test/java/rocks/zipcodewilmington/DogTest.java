@@ -97,4 +97,17 @@ public class DogTest {
         Dog dog = new Dog(name, birthDate, id);
         assertTrue(dog instanceof Mammal);
     }
+
+    @Test
+    public void DogEatsFoodTest(){
+        Food meal = new Food();
+        String name = null;
+        Date birthDate = null;
+        Integer id = null;
+        Integer expectedNumberOfMeals = 1;
+
+        Dog dog = new Dog(name, birthDate, id);
+        dog.eat(meal);
+        Assert.assertEquals(dog.getNumberOfMealsEaten(), expectedNumberOfMeals);
+    }
 }

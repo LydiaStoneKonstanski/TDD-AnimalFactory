@@ -17,9 +17,9 @@ public class AnimalFactoryTest {
     public void createDog_notNull() {
         String name = "Chloe";
         Date birthDate = new Date(2000, 12, 6);
-        Integer id = 3503;
 
-        Animal dog = AnimalFactory.createDog(name, birthDate, id);
+
+        Animal dog = AnimalFactory.createDog(name, birthDate);
 
         assertNotNull(dog);
     }
@@ -29,10 +29,10 @@ public class AnimalFactoryTest {
     public void createCat_notNull() {
         String name = "Anastasia";
         Date birthDate = new Date(2014, 7, 15);
-        Integer id = 9853;
 
-        Animal cat = AnimalFactory.createCat(name, birthDate, id);
+        Animal cat = AnimalFactory.createCat(name, birthDate);
 
         assertNotNull(cat);
     }
+
 }

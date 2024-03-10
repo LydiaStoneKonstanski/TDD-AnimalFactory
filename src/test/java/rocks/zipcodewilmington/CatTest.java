@@ -77,9 +77,10 @@ public class CatTest {
     public void catGetsNewIdTest() {
         String name = null;
         Date birthDate = null;
-        Integer id = 1903;
-        Cat cat = new Cat(null, null, null);
-        Assert.assertEquals(id, cat.getId());
+        Integer expectedId = 1903;
+        Cat cat = new Cat(null, null, expectedId);
+
+        Assert.assertEquals(expectedId, cat.getId());
     }
     @Test
     public void catIsInstanceOfAnimalTest() {
@@ -97,5 +98,16 @@ public class CatTest {
         Cat cat = new Cat(null, null, null);
         assertTrue(cat instanceof Mammal);
     }
+    @Test
+    public void CatEatsFoodTest(){
+        Food meal = new Food();
+        String name = null;
+        Date birthDate = null;
+        Integer id = null;
+        Integer expectedNumberOfMeals = 1;
 
+        Cat cat = new Cat(name, birthDate, id);
+        cat.eat(meal);
+        Assert.assertEquals(cat.getNumberOfMealsEaten(), expectedNumberOfMeals);
+    }
 }
