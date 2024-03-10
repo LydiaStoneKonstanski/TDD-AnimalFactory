@@ -10,5 +10,5 @@ public class CatHouseTest {
     // TODO - Create tests for `Cat getCatById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfCats()`
 
-    //Create CAt, create catHouse, add cat into cathouse, check that the cat is in the cathouse
+    //Create Cat, create catHouse, add cat into cathouse, check that the cat is in the cathouse
 }
