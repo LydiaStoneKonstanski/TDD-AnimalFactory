@@ -8,21 +8,22 @@ import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * @author leon on 4/19/18.
  */
 public class CatTest {
     // TODO - XCreate tests for `void setName(String name)`
-    // TODO - Create tests for `speak`
-    // TODO - X Create tests for `setBirthDate(Date birthDate)`
+    // TODO - XCreate tests for `speak`
+    // TODO - XCreate tests for `setBirthDate(Date birthDate)`
+    // TODO - XCreate tests for `Integer getId()`
+    // TODO - XCreate test to check Animal inheritance; google search `java instanceof keyword`
+    // TODO - XCreate test to check Mammal inheritance; google search `java instanceof keyword`
+
     // TODO - Create tests for `void eat(Food food)`
-    // TODO - Create tests for `Integer getId()`
-    // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
-    // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
-
-
     @Test
-    public void constructorTest() {
+    public void catConstructorTest() {
         // Given (cat data)
         String givenName = "Zula";
         Date givenBirthDate = new Date();
@@ -42,30 +43,59 @@ public class CatTest {
         Assert.assertEquals(givenId, retrievedId);
     }
     @Test
-    public void createCat_IsNameSet() {
-        //Pass in sample name and date
-        String startName = "Snoops";
-        String newName = "Snoopums";
-        Date birthDate = new Date(1998, 3, 8);
-        Integer id = 9780;
-
-
-        Animal pet = new Cat(startName, birthDate, id);
-
-        // .setName should change the name that was given in the original constructor
-        // use .getName to confirm that it was successfully set
-        ((Mammal)pet).setName(newName);
-        Assert.assertEquals(newName, ((Mammal)pet).getName()); //Check name is set
+    public void setNameTest() {
+        Cat cat = new Cat(null, null, null);
+        String givenName = "Snoops";
+        cat.setName(givenName);
+        String catName = cat.getName();
+        Assert.assertEquals(catName, givenName);
     }
     @Test
+    public void testCat_Speaks() {
+        Cat cat = new Cat(null, null, null);
+        String expected = "meow!";
+        String actual = cat.speak();
+        Assert.assertEquals(expected, actual);
+        }
+    @Test
     public void createCat_birthDateIsSet() {
-        //Pass in sample name and date
-        String name = "Bria";
+        String name = null;
         Date birthDate = new Date(1998, 3, 8);
-        Integer id = 5043;
+        Integer id = null;
 
-        Animal pet = new Cat(name, birthDate, id);
-        Assert.assertEquals(birthDate, ((Mammal) pet).getBirthDate()); //Check birthDate is set
+        Cat cat = new Cat(name, birthDate, id);
+        Assert.assertEquals(birthDate, cat.getBirthDate());
+    }
+    @Test
+    public void catSpeakTest() {
+        Cat cat = new Cat(null, null, null);
+        String expected = "meow!";
+        String actual = cat.speak();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void catGetsNewIdTest() {
+        String name = null;
+        Date birthDate = null;
+        Integer id = 1903;
+        Cat cat = new Cat(null, null, null);
+        Assert.assertEquals(id, cat.getId());
+    }
+    @Test
+    public void catIsInstanceOfAnimalTest() {
+        String name = null;
+        Date birthDate = null;
+        Integer id = null;
+        Cat cat = new Cat(null, null, null);
+        assertTrue(cat instanceof Animal);
+    }
+    @Test
+    public void catIsInstanceOfMammalTest() {
+        String name = null;
+        Date birthDate = null;
+        Integer id = null;
+        Cat cat = new Cat(null, null, null);
+        assertTrue(cat instanceof Mammal);
     }
 
 }

@@ -1,5 +1,7 @@
 package rocks.zipcodewilmington.animals;
 
+import rocks.zipcodewilmington.Food;
+
 import java.util.Date;
 
 /**
@@ -15,4 +17,8 @@ public class Cat extends Mammal {
         return "meow!";
     }
 
+    @Override
+    public void eat(Food food) {
+        super.eat(food);
+    }
 }
